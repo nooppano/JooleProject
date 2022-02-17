@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8899af724f444f369f0131d96ef29681" Name="Diagram1">
+        <EntityTypeShape EntityType="ItlizeJooleDBModel.tblCategory" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItlizeJooleDBModel.tblManufacture" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItlizeJooleDBModel.tblProduct" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItlizeJooleDBModel.tblSubCategory" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItlizeJooleDBModel.tblTechSpecFilter" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItlizeJooleDBModel.tblType" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItlizeJooleDBModel.tblUser" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ItlizeJooleDBModel.FK_tblCategory_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="ItlizeJooleDBModel.FK_tblCategory_tblSubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="ItlizeJooleDBModel.FK_tblManufacture_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="ItlizeJooleDBModel.FK_tblSubCategory_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="ItlizeJooleDBModel.FK_tblTechSpecFilter_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="ItlizeJooleDBModel.FK_tblType_tblProduct" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
