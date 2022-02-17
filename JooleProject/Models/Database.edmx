@@ -339,7 +339,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ItlizeJooleDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ItlizeJooleDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tblCategories" EntityType="Self.tblCategory" />
           <EntitySet Name="tblManufactures" EntityType="Self.tblManufacture" />
           <EntitySet Name="tblProducts" EntityType="Self.tblProduct" />
@@ -377,7 +377,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ItlizeJooleDBModelStoreContainer" CdmEntityContainer="ItlizeJooleDBEntities">
+        <EntityContainerMapping StorageEntityContainer="ItlizeJooleDBModelStoreContainer" CdmEntityContainer="ItlizeJooleDBEntities1">
           <EntitySetMapping Name="tblCategories">
             <EntityTypeMapping TypeName="ItlizeJooleDBModel.tblCategory">
               <MappingFragment StoreEntitySet="tblCategory">
@@ -470,6 +470,7 @@
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

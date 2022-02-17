@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8899af724f444f369f0131d96ef29681" Name="Diagram1">
+      <Diagram DiagramId="73daea4f710a4785bfe8b997c5866c2a" Name="Diagram1">
         <EntityTypeShape EntityType="ItlizeJooleDBModel.tblCategory" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ItlizeJooleDBModel.tblManufacture" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ItlizeJooleDBModel.tblProduct" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
