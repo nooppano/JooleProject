@@ -22,3 +22,46 @@ select,
 textarea {
     max-width: 280px;
 }
+.logo_wrapper {
+    height: 70vmin;
+    width: 70vmin;
+}
+
+.j-letter {
+    font-family: Helvetica;
+    font-size: 180px;
+    color: #000099;
+    letter-spacing: 40px;
+    position: fixed;
+}
+
+.le-letter {
+    font-family: Helvetica;
+    font-size: 200px;
+    color: #000099;
+    letter-spacing: 19px;
+    position: fixed;
+    bottom: 180px;
+    right: 650px;
+}
+
+.circ1 {
+    z-index: 2;
+    position: absolute;
+    margin-top: 5vmin;
+    margin-left: 24vmin;
+    height: 30vmin;
+    width: 30vmin;
+    border-radius: 100%;
+    background: #000099;
+}
+
+.circ2 {
+    z-index: 1;
+    margin-top: 15vmin;
+    margin-left: 10vmin;
+    height: 30vmin;
+    width: 30vmin;
+    border-radius: 100%;
+    background: #0066ff;
+}
