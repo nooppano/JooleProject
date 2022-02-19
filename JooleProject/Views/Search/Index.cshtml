@@ -4,11 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Search</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<input type="search" id="site-search" name="q" aria-label="Search through products">
+<input type="button" value="Search" onclick="location.href='@Url.Action("SearchResult", "SearchResult")'" />
+
 <table class="table">
     <tr>
         <th>
