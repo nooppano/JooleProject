@@ -31,10 +31,10 @@
           <Property Name="TechSpecFilterID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Model" Type="nvarchar" MaxLength="50" />
-          <Property Name="Airflow" Type="float" />
-          <Property Name="MaxPower" Type="float" />
-          <Property Name="SoundVolume" Type="float" />
-          <Property Name="FanDiameter" Type="float" />
+          <Property Name="Airflow" Type="int" />
+          <Property Name="MaxPower" Type="int" />
+          <Property Name="SoundVolume" Type="int" />
+          <Property Name="FanDiameter" Type="int" />
         </EntityType>
         <EntityType Name="tblSubCategory">
           <Key>
