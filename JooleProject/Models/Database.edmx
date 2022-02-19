@@ -213,10 +213,10 @@
           <Property Name="TechSpecFilterID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Airflow" Type="String" />
-          <Property Name="MaxPower" Type="String" />
-          <Property Name="SoundVolume" Type="String" />
-          <Property Name="FanDiameter" Type="String" />
+          <Property Name="Airflow" Type="Int16" />
+          <Property Name="MaxPower" Type="Int16" />
+          <Property Name="SoundVolume" Type="Int16" />
+          <Property Name="FanDiameter" Type="Int16" />
           <NavigationProperty Name="tblCategory" Relationship="Self.FK_tblCategory_tblProduct" FromRole="tblProduct" ToRole="tblCategory" />
           <NavigationProperty Name="tblManufacture" Relationship="Self.FK_tblManufacture_tblProduct" FromRole="tblProduct" ToRole="tblManufacture" />
           <NavigationProperty Name="tblSubCategory" Relationship="Self.FK_tblSubCategory_tblProduct" FromRole="tblProduct" ToRole="tblSubCategory" />
