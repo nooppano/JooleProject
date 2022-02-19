@@ -38,4 +38,9 @@ VALUES (1, 1, N'Mechanical'),
 
 GO
 
+INSERT INTO [dbo].[tblProduct] ([ProductID], [ManufactureID], [TypeID], [CatID], [SubCatID], [TechSpecFilterID], [Name], [Model], [Airflow], [MaxPower], [SoundVolume], [FanDiameter]) 
+VALUES (1, 1, 1, 1, 1, 1, N'Big Ass', N'Haiku H Series', 100, 25, 25, 30),
+(2, 2, 2, 2, 2, 2, N'BigASS ', N'Haiku Yamaha', 60, 85, 35, 25);
+GO
+
 
