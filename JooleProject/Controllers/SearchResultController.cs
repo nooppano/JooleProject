@@ -9,7 +9,7 @@ namespace JooleProject.Controllers
     public class SearchResultController : Controller
     {
         // GET: SearchResult
-        public ActionResult Index()
+        public ActionResult SearchResult()
         {
             return View();
         }
