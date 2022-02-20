@@ -12,7 +12,19 @@ namespace JooleProject.Controllers
 {
     public class SearchController : Controller
     {
+
         private ItlizeJooleDBEntities1 db = new ItlizeJooleDBEntities1();
+
+
+        public ActionResult Search(string searchstr)
+        {
+            var categorylist = from r in db.tblCategories select r;
+            if (!string.IsNullOrEmpty(searchstr))
+            {
+                categorylist = categorylist.Where(r => r.CategoryName.Contains(searchstr));
+            }
+            return View(categorylist.ToList());
+        }
 
         // GET: Search
         public ActionResult Index()
