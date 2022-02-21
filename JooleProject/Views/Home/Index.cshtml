@@ -2,36 +2,27 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <asp:TextBox ID="txtNumber"
-                 placeholder="Enter 5 digit number"
-                 Width="300px"
-                 runat="server">
-    </asp:TextBox>
-    <br />
-    <asp:TextBox ID="txtName"
-                 placeholder="Enter your Name"
-                 Width="300px"
-                 runat="server">
-    </asp:TextBox>
-</div>
+<div class="jumbotron"></div>
+
 
 <div class="jumbotron">
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <h1>ASP.NET</h1>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <br />
-    <br />
-    <br />
-    <input type="button" class="btn btn-primary btn-lg" value="Login" onclick="location.href='@Url.Action("Index", "Search")'" />
+    <h2>Login Page</h2><br>
+    <div class="login">
+        <form id="login" method="get" action="login.php">
+            <label><b>User Name</b></label>
+            <input type="text" name="Uname" id="Uname" placeholder="Username">
+            <br><br>
+            <label><b>Password</b></label>
+            <input type="Password" name="Pass" id="Pass" placeholder="Password">
+            <br><br>
+                <input type="button" name="log" id="log" class="btn btn-primary btn-lg" value="Login" onclick="location.href='@Url.Action("Index", "Search")'" />
+            <br><br>
+            <input type="checkbox" id="check">
+            <span>Remember me</span>
+            <br><br>
+            Forgot <a href="#">Password</a>
+        </form>
+    </div>
+    
 </div>
 
