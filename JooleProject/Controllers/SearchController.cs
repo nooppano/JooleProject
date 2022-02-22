@@ -28,7 +28,16 @@ namespace JooleProject.Controllers
             ViewBag.catselect = new SelectList(db.tblCategories, "CatID", "CategoryName");
             ViewBag.CatIDSearch = CatIDSearch;
             ViewBag.SearchSubcat = SearchSubcat;
-            return View(db.tblProducts.ToList());
+
+            var products = from p in db.tblProducts
+                           select p;
+
+            if (!String.IsNullOrEmpty(CatIDSearch)/* && !String.IsNullOrEmpty(SearchSubcat)*/)
+            {
+                products = products.Where(p => p.CatID.ToString().Contains(CatIDSearch));
+            }
+
+            return View(products.ToList());
         }
 
         // GET: Search/Details/5
