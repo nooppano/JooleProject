@@ -1,4 +1,4 @@
-﻿@model IEnumerable<JooleProject.Models.tblCategory>
+﻿@model JooleProject.Models.tblCategory
 
 @{
     ViewBag.Title = "Index";
@@ -7,13 +7,28 @@
 <h2>Search</h2>
 
 
-@using (Html.BeginForm("Index", "GenerateInvoice", FormMethod.Get))
+@using (Html.BeginForm("Index", "Search", FormMethod.Get))
 {
-    @Html.AntiForgeryToken()
+    @Html.DropDownList("CatIDSearch", (SelectList)ViewBag.catselect, new { @class = "form-control col-md-3 select-add-placeholder" })
+    @Html.TextBox("SearchSubcat", "",new { @class = "form-control col-md-3 " })
 
-    @Html.DropDownList("CatID", (SelectList)ViewBag.catselect, "Select Category", new { @class = "form-control" })
+    <input type="submit" value="Search" class="btn btn-default" />
 
 }
 
-<input type="search" id="site-search" name="q" aria-label="Search through products">
-<input type="button" value="Search" placeholder="Search..." onclick="location.href='@Url.Action("SearchResult", "SearchResult")'" />
+<h4 style="color:purple">
+
+    CatID: @ViewBag.CatIDSearch<br />
+    Subcategory:@ViewBag.SearchSubcat
+
+</h4>
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            $(".select-add-placeholder").prepend("<option value='' disabled selected>Select a category</option>");
+        })
+
+    </script>
+}

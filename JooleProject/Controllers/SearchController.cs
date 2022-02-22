@@ -22,10 +22,13 @@ namespace JooleProject.Controllers
         }
 
         // GET: Search
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(String CatIDSearch, String SearchSubcat)
         {
             ViewBag.catselect = new SelectList(db.tblCategories, "CatID", "CategoryName");
-            return View(db.tblCategories.ToList());
+            ViewBag.CatIDSearch = CatIDSearch;
+            ViewBag.SearchSubcat = SearchSubcat;
+            return View();
         }
 
         // GET: Search/Details/5
