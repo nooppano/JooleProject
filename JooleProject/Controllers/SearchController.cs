@@ -18,17 +18,13 @@ namespace JooleProject.Controllers
 
         public ActionResult Search(string searchstr)
         {
-            var categorylist = from r in db.tblCategories select r;
-            if (!string.IsNullOrEmpty(searchstr))
-            {
-                categorylist = categorylist.Where(r => r.CategoryName.Contains(searchstr));
-            }
-            return View(categorylist.ToList());
+            return View();
         }
 
         // GET: Search
         public ActionResult Index()
         {
+            ViewBag.catselect = new SelectList(db.tblCategories, "CatID", "CategoryName");
             return View(db.tblCategories.ToList());
         }
 

@@ -6,32 +6,14 @@
 
 <h2>Search</h2>
 
-<input type="search" id="site-search" name="q" aria-label="Search through products">
-<input type="button" value="Search" onclick="location.href='@Url.Action("SearchResult", "SearchResult")'" />
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </th>
-        <th></th>
-    </tr>
+@using (Html.BeginForm("Index", "GenerateInvoice", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CatID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CatID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CatID })
-            </td>
-        </tr>
-    }
+    @Html.DropDownList("CatID", (SelectList)ViewBag.catselect, "Select Category", new { @class = "form-control" })
 
-</table>
+}
 
 <input type="search" id="site-search" name="q" aria-label="Search through products">
 <input type="button" value="Search" placeholder="Search..." onclick="location.href='@Url.Action("SearchResult", "SearchResult")'" />
