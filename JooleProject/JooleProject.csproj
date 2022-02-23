@@ -185,8 +185,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\fan1.jpg" />
+    <Content Include="images\fan2.jpg" />
+    <Content Include="images\fan3.jpg" />
+    <Content Include="images\fan4.jpg" />
     <Content Include="images\LogoBig.PNG" />
     <Content Include="images\LogoSmall.PNG" />
+    <Content Include="images\vacuum1.jpg" />
     <Content Include="Models\Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Database.Context.cs</LastGenOutput>

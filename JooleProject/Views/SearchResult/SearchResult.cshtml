@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 
 </head>
 <style>
@@ -26,26 +27,50 @@
         font-family: 'Kanit',sans-serif;
         font-size: 13px;
     }
+    .container{
+        margin-left: 0;
+        margin-right:0;
+    }
+    p2 {
+        font-weight: bold;
+    }
+    #addButton {   
+        height: 30px;
+        width: 70px;
+        background-color: #008CBA;
+        color: white;
+    }
 </style>
 <div id="searchFilter">
     <h1>Advanced Search Filter</h1>
 </div>
-<div id="productList">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body text-center">
-                    <img src="~/images/LogoSmall.PNG" class="product-image">
-                    <p2>BigAss</p2>
-                    <p2>Haiku H Series</p2>
-                    <p2>S3150-s0-bc-05-231-3-42</p2>
-                    <p>5.467 CFM</p>
-                    <p>21.14W</p>
-                    <p>35dBA</p>
-                    <p>60 Degree fans speed</p>
-                </div>
-            </div>
+<section class ="page-section"id="productList">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
 
+                <div class="col-sm-4" style="padding-left: 30px;">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body text-center">
+                            <img src="../images/fan1.jpg">
+                            <br />
+                            <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
+                            <br />
+                            <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
+                            <br />
+                            <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
+                            <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
+                            <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
+                            <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
+                            <input type="checkbox"><p2>Compare</p2>
+                            <button type="button" id="addButton">Add to</button>
+
+                        </div>
+                    </div>
+                </div>
+          
+            }
+           </div>
         </div>
-    </div>
-</div>
+</section>
