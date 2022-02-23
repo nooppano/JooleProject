@@ -47,30 +47,60 @@
 <section class ="page-section"id="productList">
     <div class="container">
         <div class="row">
-            @foreach (var item in Model)
+            @if (ViewBag.CatIDSearch == "1")
             {
+                foreach (var item in Model)
+                {
 
-                <div class="col-sm-4" style="padding-left: 30px;">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body text-center">
-                            <img src="../images/fan1.jpg">
-                            <br />
-                            <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
-                            <br />
-                            <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
-                            <br />
-                            <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
-                            <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
-                            <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
-                            <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
-                            <input type="checkbox"><p2>Compare</p2>
-                            <button type="button" id="addButton">Add to</button>
+                    <div class="col-sm-4" style="padding-left: 30px;">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body text-center">
+                                <img src="../images/fan1.jpg">
+                                <br />
+                                <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
+                                <br />
+                                <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
+                                <br />
+                                <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
+                                <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
+                                <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
+                                <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
+                                <input type="checkbox"><p2>Compare</p2>
+                                <button type="button" id="addButton">Add to</button>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-          
+
+                }
             }
-           </div>
+            else if (ViewBag.CatIDSearch == "2")
+            {
+                foreach (var item in Model)
+                {
+
+                    <div class="col-sm-4" style="padding-left: 30px;">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body text-center">
+                                <img src="../images/vacuum1.jpg">
+                                <br />
+                                <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
+                                <br />
+                                <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
+                                <br />
+                                <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
+                                <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
+                                <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
+                                <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
+                                <input type="checkbox"><p2>Compare</p2>
+                                <button type="button" id="addButton">Add to</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            }
+        </div>
         </div>
 </section>

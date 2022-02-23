@@ -51,8 +51,7 @@ namespace JooleProject.Controllers
             {
                 viewmodelResult = viewmodelResult.Where(p => p.subCategory.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
             }
-            
-        
+
 
             return View(viewmodelResult.ToList());
         }
