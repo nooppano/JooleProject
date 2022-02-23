@@ -43,8 +43,14 @@ namespace JooleProject.Controllers
                         Session["Username"] = objUser.Username.ToString();
                         return RedirectToAction("UserDashBoard");
                     }
+                    else
+                    {
+                        ModelState.AddModelError("Failure", "Wrong Username and password combination !");
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
             }
+            
             return View(user);
         }
 
