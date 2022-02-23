@@ -38,10 +38,10 @@ namespace JooleProject.Controllers
                                   join k in db.tblSubCategories on p.SubCatID equals k.SubCatID
                                   select new SearchResultViewModel { product = p, subCategory = k };
 
-            if (!String.IsNullOrEmpty(CatIDSearch)/* && !String.IsNullOrEmpty(SearchSubcat)*/)
+            if (!String.IsNullOrEmpty(CatIDSearch) || !String.IsNullOrEmpty(SearchSubcat))
             {
 
-                viewmodelResult = viewmodelResult.Where(p => p.product.CatID.ToString().Contains(CatIDSearch));
+                viewmodelResult = viewmodelResult.Where(p => p.product.CatID.ToString().Contains(CatIDSearch) && p.subCategory.SubCatName.Contains(SearchSubcat));
             }
 
             return View(viewmodelResult.ToList());
