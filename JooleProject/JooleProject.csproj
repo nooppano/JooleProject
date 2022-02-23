@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdvancedSearchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SearchResultController.cs" />
@@ -243,9 +244,11 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\SearchResult\SearchResult.cshtml" />
     <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\Shared\layoutNoNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdvancedSearch\" />
     <Folder Include="Views\Home\Login\" />
   </ItemGroup>
   <ItemGroup>

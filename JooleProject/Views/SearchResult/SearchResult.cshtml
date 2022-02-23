@@ -1,1 +1,55 @@
-﻿
+﻿@model IEnumerable<JooleProject.Models.tblSubCategory>
+@{
+    ViewBag.Title = "SearchResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+
+</head>
+<style>
+    #searchFilter {
+        position: relative;
+        width: 30%;
+        float: left;
+        height: 100%;
+        background-color: #0080ff;
+    }
+
+    #productList {
+        position: relative;
+        width: 70%;
+        float: left;
+        height: 100%;
+    }
+
+    .card {
+        border: thin;
+    }
+
+    .card-text {
+        font-family: 'Kanit',sans-serif;
+        font-size: 13px;
+    }
+</style>
+<div id="searchFilter">
+    <h1>Advanced Search Filter</h1>
+</div>
+<div id="productList">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="~/images/LogoSmall.PNG" class="product-image">
+                    <p2>BigAss</p2>
+                    <p2>Haiku H Series</p2>
+                    <p2>S3150-s0-bc-05-231-3-42</p2>
+                    <p>5.467 CFM</p>
+                    <p>21.14W</p>
+                    <p>35dBA</p>
+                    <p>60 Degree fans speed</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
