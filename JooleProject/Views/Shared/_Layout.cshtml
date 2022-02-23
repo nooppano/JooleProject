@@ -1,4 +1,4 @@
-﻿@model IEnumerable<JooleProject.Models.tblProduct>
+﻿@model IEnumerable<JooleProject.Models.SearchResultViewModel>
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@
         height: auto;
     }
 
-    .search-container {
+    .searchcontainer {
         padding-top: 55px;
         padding-left: 200px;
         display: inline-block;
@@ -54,12 +54,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>-->
-                <div class="search-container">
-                    @using (Html.BeginForm("NavBarSearch", "AdvancedSearch", FormMethod.Get))
+                <div class="searchcontainer">
+                    @using (Html.BeginForm("SearchResult", "SearchResult", FormMethod.Get))
                     {
-                        @Html.DropDownList("catNames", "Categories")
-                        @Html.TextBox("SearchString")
-                        <button type="submit" id="NavSearchButton" onclick="location.href='@Url.Action("SearchResult", "SearchResult")'"><i class="fa fa-search"></i></button>
+                        @Html.DropDownList("CatIDSearch", (SelectList)ViewBag.catselect)
+                        @Html.TextBox("SearchSubcat", "")
+                        
+                        <button type="submit" id="NavSearchButton"><i class="fa fa-search"></i></button>
                     }
                 </div>
                 <a class="navbar-brand" href="@Url.Action("Index", "Search")">
