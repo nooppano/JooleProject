@@ -1,4 +1,4 @@
-﻿@model IEnumerable<JooleProject.Models.tblProduct>
+﻿@model IEnumerable<JooleProject.Models.SearchResultViewModel>
 @{
     ViewBag.Title = "Index";
 }
@@ -59,6 +59,9 @@
         <th>
             Fan Diameter
         </th>
+        <th>
+            Subcategory
+        </th>
 
     </tr>
 
@@ -67,40 +70,44 @@
     {
 <tr>
     <td>
-        @Html.DisplayFor(modelItem => item.ProductID)
+        @Html.DisplayFor(modelItem => item.product.ProductID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.ManufactureID)
+        @Html.DisplayFor(modelItem => item.product.ManufactureID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.TypeID)
+        @Html.DisplayFor(modelItem => item.product.TypeID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.CatID)
+        @Html.DisplayFor(modelItem => item.product.CatID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.SubCatID)
+        @Html.DisplayFor(modelItem => item.product.SubCatID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.TechSpecFilterID)
+        @Html.DisplayFor(modelItem => item.product.TechSpecFilterID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Name)
+        @Html.DisplayFor(modelItem => item.product.Name)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Model)
+        @Html.DisplayFor(modelItem => item.product.Model)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Airflow)
+        @Html.DisplayFor(modelItem => item.product.Airflow)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.MaxPower)
+        @Html.DisplayFor(modelItem => item.product.MaxPower)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.SoundVolume)
+        @Html.DisplayFor(modelItem => item.product.SoundVolume)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.FanDiameter)
+        @Html.DisplayFor(modelItem => item.product.FanDiameter)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.subCategory.SubCatName)
     </td>
 </tr>
     }
