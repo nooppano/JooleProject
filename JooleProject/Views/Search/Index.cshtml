@@ -1,31 +1,47 @@
 ﻿
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/layoutNoNav.cshtml";
-}
 
-
-
-<h2>Search</h2>
-
-
-@using (Html.BeginForm("SearchResult", "SearchResult", FormMethod.Get))
-{
-    @Html.DropDownList("CatIDSearch", (SelectList)ViewBag.catselect, new { @class = "form-control col-md-3 select-add-placeholder" })
-    @Html.TextBox("SearchSubcat", "", new { @class = "form-control col-md-3 " })
-
-    <input type="submit" value="Search" class="btn btn-default" />
 
 }
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(45,178,253,1) 90%);
+    }
+    .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+</style>
 
 
+<body>
+    <img src="~/images/LogoBig.png" alt="Sample Photo" class="wrapper" style="padding-bottom:400px"  />
+    <div class="wrapper form-inline">
+        <h2 style="text-align:center">Search</h2>
+        @using (Html.BeginForm("SearchResult", "SearchResult", FormMethod.Get))
+        {
+            @Html.DropDownList("CatIDSearch", (SelectList)ViewBag.catselect, new { @class = "form-control select-add-placeholder" })
+            @Html.TextBox("SearchSubcat", "", new { @class = "form-control" })
 
-@section Scripts
-{
-    <script>
-        $(function () {
-            $(".select-add-placeholder").prepend("<option value='' disabled selected>Select a category</option>");
-        })
+            <input type="submit" value="Search" class="btn btn-default " />
+        }
+    </div>
+</body>
 
-    </script>
-}
+
+<script>
+    $(function () {
+        $(".select-add-placeholder").prepend("<option value='' disabled selected>Select a category</option>");
+    })
+</script>

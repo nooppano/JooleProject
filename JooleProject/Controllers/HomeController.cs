@@ -41,7 +41,7 @@ namespace JooleProject.Controllers
                     {
                         Session["UserID"] = objUser.UserID.ToString();
                         Session["Username"] = objUser.Username.ToString();
-                        return RedirectToAction("UserDashBoard");
+                        return RedirectToAction("Index", "Search");
                     }
                     else
                     {
