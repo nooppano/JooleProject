@@ -9,7 +9,7 @@
 <h2>Search</h2>
 
 
-@using (Html.BeginForm("Search", "Search", FormMethod.Get))
+@using (Html.BeginForm("SearchResult", "SearchResult", FormMethod.Get))
 {
     @Html.DropDownList("CatIDSearch", (SelectList)ViewBag.catselect, new { @class = "form-control col-md-3 select-add-placeholder" })
     @Html.TextBox("SearchSubcat", "", new { @class = "form-control col-md-3 " })

@@ -13,7 +13,8 @@
         width: 30%;
         float: left;
         height: 100%;
-        background-color: #0080ff;
+        background-color: white;
+        border-style: ridge;
     }
 
     #productList {
@@ -40,10 +41,55 @@
         background-color: #008CBA;
         color: white;
     }
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        position: absolute;
+        right: 30px;
+        bottom: 35px;
+    }
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
 </style>
-<div id="searchFilter">
-    <h1>Advanced Search Filter</h1>
-</div>
+<section id="searchFilter">
+    <div>
+        <p2>Search</p2>
+        <button type="button" id="FilterSave">save</button>
+        <button type="button" id="FilterClear">clear</button>
+    </div>
+    <div>
+        <button type="button" id="FilterProduct">Product</button>
+        <button type="button" id="FilterProject">Project</button>
+    </div>
+    <div class="accordion">
+        <div class="card">
+            <div class="card-header" id="heading1">
+                <h5 claass="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Product Type <i class="arrow down"></i>
+                    </button>
+
+                </h5>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="heading1">
+                <h5 claass="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Technical Specifications <i class="arrow down"></i>
+                    </button>
+
+                </h5>
+            </div>
+        </div>
+
+    </div>
+</section>
 <section class ="page-section"id="productList">
     <div class="container">
         <div class="row">
