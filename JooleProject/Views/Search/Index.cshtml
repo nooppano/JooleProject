@@ -1,4 +1,4 @@
-﻿@model IEnumerable<JooleProject.Models.SearchResultViewModel>
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/layoutNoNav.cshtml";
@@ -9,7 +9,7 @@
 <h2>Search</h2>
 
 
-@using (Html.BeginForm("Index", "Search", FormMethod.Get))
+@using (Html.BeginForm("Search", "Search", FormMethod.Get))
 {
     @Html.DropDownList("CatIDSearch", (SelectList)ViewBag.catselect, new { @class = "form-control col-md-3 select-add-placeholder" })
     @Html.TextBox("SearchSubcat", "", new { @class = "form-control col-md-3 " })
@@ -19,104 +19,6 @@
 }
 
 
-<h4 style="color:purple">
-
-    CatID: @ViewBag.CatIDSearch<br />
-    Subcategory:@ViewBag.SearchSubcat
-
-</h4>
-<table class="table">
-    <tr>
-        <th>
-            Product ID
-        </th>
-        <th>
-            Manufacture ID
-        </th>
-        <th>
-            Type ID
-        </th>
-        <th>
-            Category ID
-        </th>
-        <th>
-            Subcategory ID
-        </th>
-        <th>
-            TechSpecFilterID
-        </th>
-        <th>
-            Name
-        </th>
-        <th>
-            Model
-        </th>
-        <th>
-            Airflow
-        </th>
-        <th>
-            Max Power
-        </th>
-        <th>
-            Sound Volume
-        </th>
-        <th>
-            Fan Diameter
-        </th>
-        <th>
-            Subcategory
-        </th>
-
-    </tr>
-
-
-    @foreach (var item in Model)
-    {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.ProductID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.ManufactureID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.TypeID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.CatID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.SubCatID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.TechSpecFilterID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.Model)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.Airflow)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.MaxPower)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.SoundVolume)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.product.FanDiameter)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.subCategory.SubCatName)
-    </td>
-</tr>
-    }
-
-</table>
 
 @section Scripts
 {

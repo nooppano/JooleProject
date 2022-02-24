@@ -1,8 +1,103 @@
-﻿<input type="search" id="site-search" name="q" aria-label="Search through products">
-<input type="button" value="Search" onclick="location.href='@Url.Action("SearchResult", "SearchResult")'" />
+﻿@model IEnumerable<JooleProject.Models.SearchResultViewModel>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/layoutNoNav.cshtml";
+}
 
-<input type="search" id="site-search" name="q" aria-label="Search through products">
-<input type="button" value="Search" onclick="location.href='@Url.Action("SearchResult", "SearchResult")'" />
-<p>test</p>
-<p>test</p>
-<p>test</p>
+
+
+<h2>Results</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Product ID
+        </th>
+        <th>
+            Manufacture ID
+        </th>
+        <th>
+            Type ID
+        </th>
+        <th>
+            Category ID
+        </th>
+        <th>
+            Subcategory ID
+        </th>
+        <th>
+            TechSpecFilterID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Airflow
+        </th>
+        <th>
+            Max Power
+        </th>
+        <th>
+            Sound Volume
+        </th>
+        <th>
+            Fan Diameter
+        </th>
+        <th>
+            Subcategory
+        </th>
+
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.ManufactureID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.TypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.CatID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.SubCatID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.TechSpecFilterID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.Airflow)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.MaxPower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.SoundVolume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.FanDiameter)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.subCategory.SubCatName)
+            </td>
+        </tr>
+    }
+
+</table>
