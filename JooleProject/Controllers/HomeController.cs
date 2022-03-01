@@ -1,4 +1,4 @@
-﻿using JooleProject.Models;
+﻿//using JooleProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,31 +28,37 @@ namespace JooleProject.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(tblUser user)
-        {
-            if (ModelState.IsValid)
-            {
-                using (ItlizeJooleDBEntities1 db = new ItlizeJooleDBEntities1())
-                {
-                    var objUser = db.tblUsers.Where(a => a.Username.Equals(user.Username) && a.Password.Equals(user.Password)).FirstOrDefault();
-                    if (objUser != null)
-                    {
-                        Session["UserID"] = objUser.UserID.ToString();
-                        Session["Username"] = objUser.Username.ToString();
-                        return RedirectToAction("Index", "Search");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("Failure", "Wrong Username and password combination !");
-                        return RedirectToAction("Index", "Home");
-                    }
-                }
-            }
+        //public ActionResult Login(tblUser user)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        using (ItlizeJooleDBEntities1 db = new ItlizeJooleDBEntities1())
+        //        {
+        //            var objUser = db.tblUsers.Where(a => a.Username.Equals(user.Username) && a.Password.Equals(user.Password)).FirstOrDefault();
+        //            if (objUser != null)
+        //            {
+        //                Session["UserID"] = objUser.UserID.ToString();
+        //                Session["Username"] = objUser.Username.ToString();
+        //                return RedirectToAction("Index", "Search");
+        //            }
+        //            else
+        //            {
+        //                //If the username and password combination is not present in DB then error message is shown.
+        //                ModelState.AddModelError("Failure", "Wrong Username and password combination !");
+        //                return RedirectToAction("Index", "Home");
+        //            }
+        //        }
+        //    }
             
-            return View(user);
-        }
+        //    return View(user);
+        //}
 
         public ActionResult UserDashBoard()
         {

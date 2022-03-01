@@ -6,75 +6,18 @@
     ViewBag.Title = "Home Page";
     //Layout = "~/Views/Shared/layoutNoNav.cshtml";
 }
-
+<link href="~/Content/Site.css" rel="stylesheet" />
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-    body {
-        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(45,178,253,1) 90%);
-    }
-
-    .wrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-
-
-    .width100 {
-        width: 100%;
-        padding: 5px 5px;
-        margin: auto;
-        box-sizing: border-box;
-        border: 1px solid #555;
-        outline: none;
-        display: block;
-    }
-
-    .divpadding {
-
-        padding: 5px 5px;
-    }
-
-    .submit-btn {
-        position: absolute;
-        right: 0px;
-    }
-
-    .login {
-        position:relative;
-    }
-</style>
-
-@*<div class="jumbotron"></div>*@
 
 
 
-@*<div class="jumbotron">
-        <h2>Builing Product Selection Platform</h2><br>
-        <div class="login">
-            <form id="login" method="get" action="login.php">
-                <label><b>User Name</b></label>
-                <input type="text" name="Uname" id="Uname" placeholder="Username">
-                <br><br>
-                <label><b>Password</b></label>
-                <input type="Password" name="Pass" id="Pass" placeholder="Password">
-                <br><br>
-                <input type="button" name="log" id="log" class="btn btn-primary btn-lg" value="Login" onclick="location.href='@Url.Action("Index", "Search")'" />
-                <br><br>
-                <input type="checkbox" id="check">
-                <span>Remember me</span>
-                <br><br>
-                Forgot <a href="#">Password</a>
-            </form>
-        </div>
 
-    </div>*@
+
 
 
 <body>
@@ -114,5 +57,5 @@
         }
     </div>
 </body>
-
+ 
 
