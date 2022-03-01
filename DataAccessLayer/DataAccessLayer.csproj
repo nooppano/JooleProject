@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDAL.cs" />
+    <Compile Include="SearchResultDAL.cs" />
     <Compile Include="SubcatDAL.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
