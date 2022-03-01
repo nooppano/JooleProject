@@ -15,9 +15,12 @@ namespace JooleProject.Controllers
         // GET: SearchResult
         public ActionResult SearchResult(String CatIDSearch, String SearchSubcat)
         {
-            /*ViewBag.catselect = new SelectList(db.tblCategories, "CatID", "CategoryName");
+            CategoryLogic cat = new CategoryLogic();
+            var catIQ = cat.GetIQ();
+
+            ViewBag.catselect = new SelectList(catIQ, "CatID", "CategoryName");
             ViewBag.CatIDSearch = CatIDSearch;
-            ViewBag.SearchSubcat = SearchSubcat;*/
+            ViewBag.SearchSubcat = SearchSubcat;
 
             /*var products = from p in db.tblProducts
                            select p;*/
@@ -28,28 +31,25 @@ namespace JooleProject.Controllers
                                   join k in db.tblSubCategories on p.SubCatID equals k.SubCatID
                                   select new SearchResultViewModel { product = p, subCategory = k };*/
 
-            /*
+            PandTViewModel pant = new PandTViewModel();
+            var panty = pant.PandTList();
             if (!String.IsNullOrEmpty(CatIDSearch) && !String.IsNullOrEmpty(SearchSubcat))
             {
 
-                viewmodelResult = viewmodelResult.Where(p => p.product.CatID.ToString().Contains(CatIDSearch.ToString()) && p.subCategory.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
+                panty = panty.Where(p => p.Product.CatID.ToString().Contains(CatIDSearch.ToString()) && p.subcat.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
             }
             else if (!String.IsNullOrEmpty(CatIDSearch))
             {
-                viewmodelResult = viewmodelResult.Where(p => p.product.CatID.ToString().Contains(CatIDSearch.ToString()));
+                panty = panty.Where(p => p.Product.CatID.ToString().Contains(CatIDSearch.ToString()));
             }
             else if (!String.IsNullOrEmpty(SearchSubcat))
             {
-                viewmodelResult = viewmodelResult.Where(p => p.subCategory.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
+                panty = panty.Where(p => p.subcat.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
             }
 
-            return View(viewmodelResult.ToList());
-            */
-            SubcatLogic scl = new SubcatLogic();
-            var subcatlist = scl.SubcatList();
-
-            return View(subcatlist);
-            return View();
+            return View(panty.ToList());
+           
+            
         }
     }
 }
