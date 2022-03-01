@@ -13,9 +13,13 @@ namespace DataAccessLayer
         {
             var PandT = from p in db.tblProducts
                         join k in db.tblTypes on p.TypeID equals k.TypeID
-                        select new ProductandTypeViewModel { Product = p, type = k };
+                        join c in db.tblSubCategories on p.SubCatID equals c.SubCatID
+                        select new ProductandTypeViewModel { Product = p, type = k, subcat = c };
+
+            
             return PandT;
             
         }
+        
     }
 }

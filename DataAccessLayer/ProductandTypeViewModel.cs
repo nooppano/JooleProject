@@ -10,5 +10,6 @@ namespace DataAccessLayer
     {
         public tblProduct Product { get; set; }
         public tblType type { get; set; }
+        public tblSubCategory subcat { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace JooleProject.Controllers
         // GET: SearchResult
         public ActionResult SearchResult(String CatIDSearch, String SearchSubcat)
         {
+
             /*ViewBag.catselect = new SelectList(db.tblCategories, "CatID", "CategoryName");
             ViewBag.CatIDSearch = CatIDSearch;
             ViewBag.SearchSubcat = SearchSubcat;*/
