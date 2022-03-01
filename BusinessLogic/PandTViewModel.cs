@@ -8,11 +8,11 @@ namespace BusinessLogic
 {
     public class PandTViewModel
     {
-        public List<ProductandTypeViewModel> PandTList()
+        public IQueryable<ProductandTypeViewModel> PandTList()
         {
             AdvancedSearchView pandt = new AdvancedSearchView();
             var pant = pandt.GetPandTVMList();
-            return pant.ToList();
+            return pant;
         }
     }
 }

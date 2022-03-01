@@ -15,5 +15,10 @@ namespace BusinessLogic
             var ListCategory = dal.GetCategoriesList();
             return ListCategory;
         }
+        public IQueryable<tblCategory> GetIQ()
+        {
+            var IQCat = dal.GetIQ();
+            return IQCat;
+        }
     }
 }

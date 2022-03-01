@@ -14,5 +14,10 @@ namespace DataAccessLayer
             var categories = db.tblCategories.ToList();
             return categories; 
         }
+        public IQueryable<tblCategory> GetIQ()
+        {
+            var IQCat = db.tblCategories;
+            return IQCat;
+        }
     }
 }
