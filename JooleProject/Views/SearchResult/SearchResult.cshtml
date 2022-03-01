@@ -1,7 +1,7 @@
-﻿@model IEnumerable<DataAccessLayer.tblSubCategory>
+﻿@model IEnumerable<DataAccessLayer.ProductandTypeViewModel>
 @{
     ViewBag.Title = "SearchResult";
-    Layout = "~/Views/Shared/layoutNoNav.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -122,7 +122,7 @@
 
     </div>
 </section>
-@*<section class ="page-section"id="productList">
+<section class ="page-section"id="productList">
         <div class="container">
             <div class="row">
                 @if (ViewBag.CatIDSearch == "1")
@@ -135,14 +135,14 @@
                                 <div class="card-body text-center">
                                     <img src="../images/fan1.jpg">
                                     <br />
-                                    <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
+                                    <p2>@Html.DisplayFor(modelItem => item.Product.Name)</p2>
                                     <br />
-                                    <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
+                                    <p2> @Html.DisplayFor(modelItem => item.Product.Model)</p2>
                                     <br />
-                                    <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
-                                    <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
-                                    <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
-                                    <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Product.Airflow)CFM</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Product.MaxPower)W at max speed</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Product.SoundVolume)dBA at max speed</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Product.FanDiameter)" fan sweep diameter</p>
                                     <input type="checkbox"><p2>Compare</p2>
                                     <button type="button" id="addButton">Add to</button>
                                 </div>
@@ -161,14 +161,14 @@
                                 <div class="card-body text-center">
                                     <img src="../images/vacuum1.jpg">
                                     <br />
-                                    <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
+                                    <p2>@Html.DisplayFor(modelItem => item.Product.Name)</p2>
                                     <br />
-                                    <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
+                                    <p2> @Html.DisplayFor(modelItem => item.Product.Model)</p2>
                                     <br />
-                                    <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
-                                    <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
-                                    <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
-                                    <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Product.Airflow)CFM</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Product.MaxPower)W at max speed</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Product.SoundVolume)dBA at max speed</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Product.FanDiameter)" fan sweep diameter</p>
                                     <input type="checkbox"><p2>Compare</p2>
                                     <button type="button" id="addButton">Add to</button>
 
@@ -180,4 +180,4 @@
                 }
             </div>
             </div>
-    </section>*@
+    </section>
