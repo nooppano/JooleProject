@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryLogic.cs" />
+    <Compile Include="LoginViewModel.cs" />
     <Compile Include="PandTViewModel.cs" />
     <Compile Include="ProductLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
