@@ -14,5 +14,12 @@ namespace BusinessLogic
             var ListUsers = dal.GetUserList();
             return ListUsers;
         }
+
+        public IQueryable<tblUser> GetIQUsers()
+        {
+            var users = dal.GetIQUsers();
+            return users;
+        }
     }
 }
+

@@ -14,5 +14,11 @@ namespace DataAccessLayer
             var users = db.tblUsers.ToList();
             return users; 
         }
+
+        public IQueryable<tblUser> GetIQUsers()
+        {
+            var users = db.tblUsers;
+            return users;
+        }
     }
 }
