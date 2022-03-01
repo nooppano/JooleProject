@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DataAccessLayer.SearchResultDAL>
+﻿@model IEnumerable<DataAccessLayer.ProductandTypeViewModel>
 @{
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/layoutNoNav.cshtml";
@@ -58,44 +58,44 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.product.ProductID)
+                @Html.DisplayFor(modelItem => item.Product.ProductID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.ManufactureID)
+                @Html.DisplayFor(modelItem => item.Product.ManufactureID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.TypeID)
+                @Html.DisplayFor(modelItem => item.Product.TypeID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.CatID)
+                @Html.DisplayFor(modelItem => item.Product.CatID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.SubCatID)
+                @Html.DisplayFor(modelItem => item.Product.SubCatID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.TechSpecFilterID)
+                @Html.DisplayFor(modelItem => item.Product.TechSpecFilterID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.Name)
+                @Html.DisplayFor(modelItem => item.Product.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.Model)
+                @Html.DisplayFor(modelItem => item.Product.Model)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.Airflow)
+                @Html.DisplayFor(modelItem => item.Product.Airflow)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.MaxPower)
+                @Html.DisplayFor(modelItem => item.Product.MaxPower)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.SoundVolume)
+                @Html.DisplayFor(modelItem => item.Product.SoundVolume)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.product.FanDiameter)
+                @Html.DisplayFor(modelItem => item.Product.FanDiameter)
             </td>
 
             <td>
-                @Html.DisplayFor(modelItem => item.subCategory.SubCatName)
+                @Html.DisplayFor(modelItem => item.subcat.SubCatName)
             </td>
         </tr>
     }
