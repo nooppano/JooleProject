@@ -20,7 +20,7 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 500px;
 }
 .logo_wrapper {
     height: 70vmin;
@@ -80,12 +80,9 @@ body {
 
 .width100 {
     width: 100%;
-    padding: 5px 5px;
-    margin: auto;
-    box-sizing: border-box;
-    border: 1px solid #555;
-    outline: none;
-    display: block;
+    
+    
+    
 }
 
 .divpadding {
@@ -99,4 +96,17 @@ body {
 
 .login {
     position: relative;
+}
+.input-icons i {
+    position: absolute;
+}
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 6px;
+    min-width: 40px;
+    right: 7px;
 }

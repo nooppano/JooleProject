@@ -38,23 +38,28 @@
         </div>
 
         <div class="divpadding">
-            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "width100", placeholder = "Username or Email" } })
-            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            <div class="input-icons">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "width100", placeholder = "Username or Email" } })
+                <i class="fa fa-user icon"></i>
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
         </div>
 
 
         <div class="divpadding">
-            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "width100", placeholder = "Password" } })
-            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            <div class="input-icons">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "width100", placeholder = "Password" } })
+                <i class="fa fa-lock icon"></i>
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
         </div>
 
-
-        <div class="submit-btn">
-            @*<div class="col-md-offset-2 col-md-10">*@
-            <input type="submit" value="Login" class="btn btn-default" />
-            @*</div>*@
+            <div class="submit-btn">
+                @*<div class="col-md-offset-2 col-md-10">*@
+                <input type="submit" value="Login" class="btn btn-default" />
+                @*</div>*@
+            </div>
         </div>
-    </div>
         }
     </div>
 </body>
