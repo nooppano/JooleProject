@@ -43,12 +43,13 @@ namespace JooleProject.Controllers
                 viewmodelResult = viewmodelResult.Where(p => p.subCategory.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
             }
 
-            return View(viewmodelResult.ToList());*/
+            return View(viewmodelResult.ToList());
 
             SubcatLogic scl = new SubcatLogic();
             var subcatlist = scl.SubcatList();
 
-            return View(subcatlist);
+            return View(subcatlist);*/
+            return View();
         }
     }
 }
