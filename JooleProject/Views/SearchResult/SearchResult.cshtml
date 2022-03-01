@@ -108,14 +108,15 @@
             </div>
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                    <p>Airflow(CFM)<p>
-                        <br />
-                    <p>Max Power(W)<p>
-                        <br />
-                    <p>Sound at max speed(dBA)<p>
-                        <br />
-                    <p>Fan sweep diameter(in)<p>
-                        <br />
+                    @Html.DisplayNameFor(Model => Model.Product.Airflow)
+                    <br />
+                    @Html.DisplayNameFor(Model => Model.Product.MaxPower)
+
+                    <br />
+                    @Html.DisplayNameFor(Model => Model.Product.SoundVolume)
+                    <br />
+                    @Html.DisplayNameFor(Model => Model.Product.FanDiameter)
+                    <br />
                 </div>
             </div>
         </div>
