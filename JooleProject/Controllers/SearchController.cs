@@ -6,18 +6,21 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using JooleProject.Models;
+using DataAccessLayer;
 
 namespace JooleProject.Controllers
 {
     public class SearchController : Controller
     {
-        private ItlizeJooleDBEntities1 db = new ItlizeJooleDBEntities1();
 
         public ActionResult Search(String CatIDSearch, String SearchSubcat)
         {
-            var viewmodelResult = from p in db.tblProducts
-                                  join k in db.tblSubCategories on p.SubCatID equals k.SubCatID
+
+
+            SearchResultDAL srd = new SearchResultDAL();
+
+            var viewmodelResult = from p in srd.product
+                                  join k in srd.subCategory on p.SubCatID equals k.SubCatID
                                   select new SearchResultViewModel { product = p, subCategory = k };
 
             if (!String.IsNullOrEmpty(CatIDSearch) && !String.IsNullOrEmpty(SearchSubcat))
