@@ -79,7 +79,7 @@
 
 <body>
     <img src="~/images/LogoBig.png" alt="Sample Photo" class="wrapper" style="padding-bottom:400px" />
-    <div class="wrapper form-inline">
+    <div class="wrapper">
         <h2 style="text-align:center">Building Product Selection Platform</h2>
 
         @using (Html.BeginForm("Login", "Home", FormMethod.Post))
@@ -87,8 +87,7 @@
             @Html.AntiForgeryToken()
 
             <div class="login" @*style="background-color:aqua"*@>
-                @*<h4>tblUser</h4>*@
-                @*<hr />*@
+
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @*Show details are saved successfully message*@
@@ -107,9 +106,9 @@
 
 
                 <div class="submit-btn">
-                    <div class="col-md-offset-2 col-md-10">
+                    @*<div class="col-md-offset-2 col-md-10">*@
                         <input type="submit" value="Login" class="btn btn-default" />
-                    </div>
+                    @*</div>*@
                 </div>
             </div>
         }

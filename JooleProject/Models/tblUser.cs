@@ -11,11 +11,13 @@ namespace JooleProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tblUser
     {
         public int UserID { get; set; }
         public string Username { get; set; }
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         public string Email { get; set; }
         public string Photo { get; set; }
