@@ -20,6 +20,11 @@ namespace BusinessLogic
             var users = dal.GetIQUsers();
             return users;
         }
+
+        public void Add(int UserID, String Username, String Password, String Email, String Photo)
+        {
+            dal.Add(UserID, Username, Password,  Email,  Photo);
+        }
     }
 }
 
