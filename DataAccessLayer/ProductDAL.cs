@@ -15,5 +15,6 @@ namespace DataAccessLayer
             var products = db.tblProducts.ToList();
             return products;
         }
+        
     }
 }

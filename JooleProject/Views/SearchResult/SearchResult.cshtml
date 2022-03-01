@@ -1,4 +1,4 @@
-﻿@model List<DataAccessLayer.tblSubCategory>
+﻿@model IEnumerable<DataAccessLayer.tblSubCategory>
 @{
     ViewBag.Title = "SearchResult";
     Layout = "~/Views/Shared/layoutNoNav.cshtml";
@@ -65,7 +65,14 @@
         <p2>Search</p2>
         <button type="button" id="FilterSave">save</button>
         <button type="button" id="FilterClear">clear</button>
-        @Html.DisplayFor(model => model)
+        @*foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubCatName)
+                </td>
+            </tr>
+        }*@
     </div>
     <div>
         <button type="button" id="FilterProduct">Product</button>
