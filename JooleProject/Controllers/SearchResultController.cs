@@ -6,30 +6,29 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using JooleProject.Models;
+using BusinessLogic;
 namespace JooleProject.Controllers
 {
     public class SearchResultController : Controller
     {
-        private ItlizeJooleDBEntities1 db = new ItlizeJooleDBEntities1();
         
         // GET: SearchResult
         public ActionResult SearchResult(String CatIDSearch, String SearchSubcat)
         {
-            ViewBag.catselect = new SelectList(db.tblCategories, "CatID", "CategoryName");
+            /*ViewBag.catselect = new SelectList(db.tblCategories, "CatID", "CategoryName");
             ViewBag.CatIDSearch = CatIDSearch;
-            ViewBag.SearchSubcat = SearchSubcat;
+            ViewBag.SearchSubcat = SearchSubcat;*/
 
             /*var products = from p in db.tblProducts
                            select p;*/
 
             /*var test = from s in db.tblProducts join sa in db.tblSubCategories on s.SubCatID equals sa.SubCatID where sa.SubCatName==(SearchSubcat) select s;*/
 
-            var viewmodelResult = from p in db.tblProducts
+            /*var viewmodelResult = from p in db.tblProducts
                                   join k in db.tblSubCategories on p.SubCatID equals k.SubCatID
-                                  select new SearchResultViewModel { product = p, subCategory = k };
+                                  select new SearchResultViewModel { product = p, subCategory = k };*/
 
-
+            /*
             if (!String.IsNullOrEmpty(CatIDSearch) && !String.IsNullOrEmpty(SearchSubcat))
             {
 
@@ -44,7 +43,12 @@ namespace JooleProject.Controllers
                 viewmodelResult = viewmodelResult.Where(p => p.subCategory.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
             }
 
-            return View(viewmodelResult.ToList());
+            return View(viewmodelResult.ToList());*/
+
+            SubcatLogic scl = new SubcatLogic();
+            var subcatlist = scl.SubcatList();
+
+            return View(subcatlist);
         }
     }
 }

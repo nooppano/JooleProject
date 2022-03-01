@@ -5,6 +5,12 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JooleProject", "JooleProject\JooleProject.csproj", "{ECE090EC-E715-4AF7-A93C-A8A238F7B18A}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ItlizeJooleDB", "..\ItlizeJooleDB\ItlizeJooleDB\ItlizeJooleDB.sqlproj", "{50D5C6B0-9FA4-4A95-8D5A-716EEF5B11A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{874EBBFC-DD60-49B7-9D8A-A52DB3D55736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{58229A2B-E539-47F1-9747-0F1BE10B1EB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,20 @@ Global
 		{ECE090EC-E715-4AF7-A93C-A8A238F7B18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECE090EC-E715-4AF7-A93C-A8A238F7B18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECE090EC-E715-4AF7-A93C-A8A238F7B18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D5C6B0-9FA4-4A95-8D5A-716EEF5B11A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D5C6B0-9FA4-4A95-8D5A-716EEF5B11A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D5C6B0-9FA4-4A95-8D5A-716EEF5B11A8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{50D5C6B0-9FA4-4A95-8D5A-716EEF5B11A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D5C6B0-9FA4-4A95-8D5A-716EEF5B11A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D5C6B0-9FA4-4A95-8D5A-716EEF5B11A8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{874EBBFC-DD60-49B7-9D8A-A52DB3D55736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{874EBBFC-DD60-49B7-9D8A-A52DB3D55736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{874EBBFC-DD60-49B7-9D8A-A52DB3D55736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{874EBBFC-DD60-49B7-9D8A-A52DB3D55736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58229A2B-E539-47F1-9747-0F1BE10B1EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58229A2B-E539-47F1-9747-0F1BE10B1EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58229A2B-E539-47F1-9747-0F1BE10B1EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58229A2B-E539-47F1-9747-0F1BE10B1EB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

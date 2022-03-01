@@ -1,7 +1,7 @@
-﻿@model IEnumerable<JooleProject.Models.SearchResultViewModel>
+﻿@model List<DataAccessLayer.tblSubCategory>
 @{
     ViewBag.Title = "SearchResult";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/layoutNoNav.cshtml";
 }
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -28,19 +28,23 @@
         font-family: 'Kanit',sans-serif;
         font-size: 13px;
     }
-    .container{
+
+    .container {
         margin-left: 0;
-        margin-right:0;
+        margin-right: 0;
     }
+
     p2 {
         font-weight: bold;
     }
-    #addButton {   
+
+    #addButton {
         height: 30px;
         width: 70px;
         background-color: #008CBA;
         color: white;
     }
+
     .arrow {
         border: solid black;
         border-width: 0 3px 3px 0;
@@ -50,6 +54,7 @@
         right: 30px;
         bottom: 35px;
     }
+
     .down {
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
@@ -60,14 +65,15 @@
         <p2>Search</p2>
         <button type="button" id="FilterSave">save</button>
         <button type="button" id="FilterClear">clear</button>
+        @Html.DisplayFor(model => model)
     </div>
     <div>
         <button type="button" id="FilterProduct">Product</button>
         <button type="button" id="FilterProject">Project</button>
     </div>
-    <div class="accordion">
+    <div class="accordion" id="accordionExample">
         <div class="card">
-            <div class="card-header" id="heading1">
+            <div class="card-header" id="headingOne">
                 <h5 claass="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Product Type <i class="arrow down"></i>
@@ -75,78 +81,96 @@
 
                 </h5>
             </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p2>Model Year: </p2>
+
+                </div>
+            </div>
         </div>
 
         <div class="card">
-            <div class="card-header" id="heading1">
+            <div class="card-header" id="headingTwo">
                 <h5 claass="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                         Technical Specifications <i class="arrow down"></i>
                     </button>
 
                 </h5>
             </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Airflow(CFM)<p>
+                        <br />
+                    <p>Max Power(W)<p>
+                        <br />
+                    <p>Sound at max speed(dBA)<p>
+                        <br />
+                    <p>Fan sweep diameter(in)<p>
+                        <br />
+                </div>
+            </div>
         </div>
 
     </div>
 </section>
-<section class ="page-section"id="productList">
-    <div class="container">
-        <div class="row">
-            @if (ViewBag.CatIDSearch == "1")
-            {
-                foreach (var item in Model)
+@*<section class ="page-section"id="productList">
+        <div class="container">
+            <div class="row">
+                @if (ViewBag.CatIDSearch == "1")
                 {
+                    foreach (var item in Model)
+                    {
 
-                    <div class="col-sm-4" style="padding-left: 30px;">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <img src="../images/fan1.jpg">
-                                <br />
-                                <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
-                                <br />
-                                <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
-                                <br />
-                                <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
-                                <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
-                                <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
-                                <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
-                                <input type="checkbox"><p2>Compare</p2>
-                                <button type="button" id="addButton">Add to</button>
-
+                        <div class="col-sm-4" style="padding-left: 30px;">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body text-center">
+                                    <img src="../images/fan1.jpg">
+                                    <br />
+                                    <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
+                                    <br />
+                                    <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
+                                    <br />
+                                    <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
+                                    <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
+                                    <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
+                                    <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
+                                    <input type="checkbox"><p2>Compare</p2>
+                                    <button type="button" id="addButton">Add to</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    }
                 }
-            }
-            else if (ViewBag.CatIDSearch == "2")
-            {
-                foreach (var item in Model)
+                else if (ViewBag.CatIDSearch == "2")
                 {
+                    foreach (var item in Model)
+                    {
 
-                    <div class="col-sm-4" style="padding-left: 30px;">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <img src="../images/vacuum1.jpg">
-                                <br />
-                                <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
-                                <br />
-                                <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
-                                <br />
-                                <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
-                                <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
-                                <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
-                                <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
-                                <input type="checkbox"><p2>Compare</p2>
-                                <button type="button" id="addButton">Add to</button>
+                        <div class="col-sm-4" style="padding-left: 30px;">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body text-center">
+                                    <img src="../images/vacuum1.jpg">
+                                    <br />
+                                    <p2>@Html.DisplayFor(modelItem => item.product.Name)</p2>
+                                    <br />
+                                    <p2> @Html.DisplayFor(modelItem => item.product.Model)</p2>
+                                    <br />
+                                    <p>@Html.DisplayFor(modelItem => item.product.Airflow)CFM</p>
+                                    <p>@Html.DisplayFor(modelItem => item.product.MaxPower)W at max speed</p>
+                                    <p>@Html.DisplayFor(modelItem => item.product.SoundVolume)dBA at max speed</p>
+                                    <p>@Html.DisplayFor(modelItem => item.product.FanDiameter)" fan sweep diameter</p>
+                                    <input type="checkbox"><p2>Compare</p2>
+                                    <button type="button" id="addButton">Add to</button>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    }
                 }
-            }
-        </div>
-        </div>
-</section>
+            </div>
+            </div>
+    </section>*@
