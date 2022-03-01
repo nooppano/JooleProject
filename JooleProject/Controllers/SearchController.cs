@@ -50,12 +50,25 @@ namespace JooleProject.Controllers
             ViewBag.CatIDSearch = CatIDSearch;
             ViewBag.SearchSubcat = SearchSubcat;
 
-            /*var products = from p in db.tblProducts
-                           select p;*/
+            PandTViewModel pant = new PandTViewModel();
+            var panty = pant.PandTList();
 
-            /*var test = from s in db.tblProducts join sa in db.tblSubCategories on s.SubCatID equals sa.SubCatID where sa.SubCatName==(SearchSubcat) select s;*/
 
-            return View();
+            if (!String.IsNullOrEmpty(CatIDSearch) && !String.IsNullOrEmpty(SearchSubcat))
+            {
+
+                panty = panty.Where(p => p.Product.CatID.ToString().Contains(CatIDSearch.ToString()) && p.subcat.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
+            }
+            else if (!String.IsNullOrEmpty(CatIDSearch))
+            {
+                panty = panty.Where(p => p.Product.CatID.ToString().Contains(CatIDSearch.ToString()));
+            }
+            else if (!String.IsNullOrEmpty(SearchSubcat))
+            {
+                panty = panty.Where(p => p.subcat.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
+            }
+
+            return View(panty.ToList());
         }
 
     }
