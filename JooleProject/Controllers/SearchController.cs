@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using DataAccessLayer;
+using BusinessLogic;
 
 namespace JooleProject.Controllers
 {
@@ -17,7 +17,7 @@ namespace JooleProject.Controllers
         {
 
 
-            SearchResultDAL srd = new SearchResultDAL();
+            /*SearchResultDAL srd = new SearchResultDAL();
 
             var viewmodelResult = from p in srd.product
                                   join k in srd.subCategory on p.SubCatID equals k.SubCatID
@@ -35,15 +35,18 @@ namespace JooleProject.Controllers
             else if (!String.IsNullOrEmpty(SearchSubcat))
             {
                 viewmodelResult = viewmodelResult.Where(p => p.subCategory.SubCatName.ToLower().Contains(SearchSubcat.ToLower()));
-            }
-            return View(viewmodelResult.ToList());
+            }*/
+            return View();
         }
 
         // GET: Search
         [HttpGet]
         public ActionResult Index(String CatIDSearch, String SearchSubcat)
         {
-            ViewBag.catselect = new SelectList(db.tblCategories, "CatID", "CategoryName");
+            CategoryLogic cat = new CategoryLogic();
+            var IQCat = cat.GetIQ();
+
+            ViewBag.catselect = new SelectList(IQCat, "CatID", "CategoryName");
             ViewBag.CatIDSearch = CatIDSearch;
             ViewBag.SearchSubcat = SearchSubcat;
 
