@@ -58,7 +58,7 @@ namespace JooleProject.Controllers
             {
 
                 Ulogic.Add(UserID, Username, Password, Email, Photo);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
 
             return View();

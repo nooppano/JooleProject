@@ -110,3 +110,13 @@ body {
     min-width: 40px;
     right: 7px;
 }
+.signup{
+    position: absolute;
+    padding-right: 15px;
+    right: 10px;
+    color: black;
+    font-size: 24px;
+ }
+.signupSubmit{
+    right: 1000px
+}
